@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    #dropdownMenu{
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 120px;
+        border: 3px solid rgb(96, 96, 110);
+        background-color: beige;
+    }
+</style>
+</head>
+<body>
+
+<div id="editor">class CharArrayToString
+    {
+       public static void main(String args[])
+       {
+          // Method 1: Using String object
+          char[] ch = {'g', 'o', 'o', 'd', ' ', 'm', 'o', 'r', 'n', 'i', 'n', 'g'};
+          String str = new String(ch);
+          System.out.println(str);
+     
+          // Method 2: Using valueOf method
+          String str2 = String.valueOf(ch);
+          System.out.println(str2);
+       }
+    }
+}</div>
+
+<div id="dropdownMenu">
+    <form>
+        <label>Izberite jezik:</label>
+        <select name="language" id="language" >
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+          <option value="html">HTML</option>
+        </select>
+        <br>
+        <button id="confirm" onclick="select1()">Potrdi</button>
+    </form>
+</div>
+    
+<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+   
+    
+    
+    
+    function select1(){
+        var e = document.getElementById("language");
+        var strUser = e.options[e.selectedIndex].value;
+        console.error(strUser);
+        
+        if(strUser !== null){
+            console.error(getElementById("strUser"));
+        
+            editor.session.setMode("ace/mode/java");
+        }
+        
+        
+    }
+    
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/java"); //to spreminja barvanje kode. Če zamenjaš zadnjo besedo (v tem primeru je java) z html,javascript ali python se koda obarva po izbranem jeziku.
+    
+    
+
+    
+
+
+    
+    
+</script>
+</body>
+</html>
